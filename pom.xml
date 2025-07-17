@@ -10,12 +10,24 @@
     <packaging>pom</packaging>
     <modules>
         <module>git-son-test</module>
+        <module>spring-demo</module>
     </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>5.3.1</junit.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!--junit5测试-->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
