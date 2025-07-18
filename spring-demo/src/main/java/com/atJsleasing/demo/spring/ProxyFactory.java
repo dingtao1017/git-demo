@@ -23,7 +23,7 @@ public class ProxyFactory {
 
     public Object getProxy(){
 
-        /**
+        /*
          * newProxyInstance()：创建一个代理实例
          * 其中有三个参数：
          * 1、classLoader：加载动态生成的代理类的类加载器
@@ -35,7 +35,7 @@ public class ProxyFactory {
         InvocationHandler invocationHandler = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                /**
+                /*
                  * proxy：代理对象
                  * method：代理对象需要实现的方法，即其中需要重写的方法
                  * args：method所对应方法的参数
@@ -46,7 +46,7 @@ public class ProxyFactory {
                     result = method.invoke(target, args);
                     System.out.println("[动态代理][日志] "+method.getName()+"，结果："+ result);
                 } catch (Exception e) {
-                    e.printStackTrace();
+//                    e.printStackTrace();
                     System.out.println("[动态代理][日志] "+method.getName()+"，异常："+e.getMessage());
                 } finally {
                     System.out.println("[动态代理][日志] "+method.getName()+"，方法执行完毕");
